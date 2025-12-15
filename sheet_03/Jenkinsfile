@@ -15,5 +15,12 @@ pipeline {
               }
             }
         }
+        stage('Test') { 
+            steps {
+              dir('sheet_03'){
+                sh './solution < ./samples/sample.in | diff - ./samples/sample.out' 
+              }
+            }
+        }
     }
 }
