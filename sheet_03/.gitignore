@@ -1,0 +1,19 @@
+## Samples
+## .in and .out accepted
+
+## binaries
+*.class
+*.exe
+*.bin
+
+## others
+*.pdf
+*.xls
+*.doc
+*solution
+
+## mac files
+*.DS_Store
+
+## VScode
+output
