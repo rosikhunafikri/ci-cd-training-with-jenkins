@@ -19,6 +19,7 @@ pipeline {
             steps {
               dir('sheet_03'){
                 sh './solution < ./samples/sample.in | diff - ./samples/sample.out' 
+                echo 'Good Test!'
               }
             }
         }
