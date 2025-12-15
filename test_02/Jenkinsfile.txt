@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    stages {
+        stage('Compile sdfsd') {
+            steps {
+              dir('sheet_03'){
+                sh 'make'
+              }
+            }
+        }
+        stage('Run qweewr') { 
+            steps {
+              dir('sheet_03'){
+                sh './solution < ./samples/sample.in' 
+		echo 'This is the second jenkins file'
+              }
+            }
+        }
+        stage('Test') { 
+            steps {
+              dir('sheet_03'){
+                sh './solution < ./samples/sample.in | diff - ./samples/sample.out' 
+                echo 'Good Test!'
+              }
+            }
+        }
+    }
+}
