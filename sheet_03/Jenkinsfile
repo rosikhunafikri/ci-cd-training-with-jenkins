@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage('Compile') {
+            steps {
+              dir('sheet_03'){
+                sh 'make'
+              }
+            }
+        }
+        stage('Run') { 
+            steps {
+              dir('sheet_03'){
+                sh './solution < ./samples/sample.in' 
+              }
+            }
+        }
+    }
+}
